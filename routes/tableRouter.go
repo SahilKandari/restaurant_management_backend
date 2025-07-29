@@ -1,0 +1,15 @@
+package routes
+
+import (
+	"restaurant-management/controllers"
+
+	"github.com/gin-gonic/gin"
+)
+
+func TableRoutes(incomingRoutes gin.IRoutes) {
+	incomingRoutes.GET("/tables", controllers.GetTablesByRestaurantId())
+	incomingRoutes.GET("/tables/:table_id", controllers.GetTable())
+	incomingRoutes.POST("/tables", controllers.CreateTable())
+	incomingRoutes.PATCH("/tables/:table_id", controllers.UpdateTable())
+	incomingRoutes.DELETE("/tables/:table_id", controllers.DeleteTable())
+}
