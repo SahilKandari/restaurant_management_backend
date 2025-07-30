@@ -13,7 +13,7 @@ import (
 
 func CustomerGetRestaurant() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("restaurant_id")
@@ -38,7 +38,7 @@ func CustomerGetRestaurant() gin.HandlerFunc {
 
 func CustomerGetTable() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("table_id")
@@ -61,7 +61,7 @@ func CustomerGetTable() gin.HandlerFunc {
 
 func CustomerGetMenus() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		rows, err := Db.QueryContext(ctx, "SELECT * FROM menus")
@@ -88,7 +88,7 @@ func CustomerGetMenus() gin.HandlerFunc {
 
 func CustomerCreateOrderId() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		var id int
@@ -103,7 +103,7 @@ func CustomerCreateOrderId() gin.HandlerFunc {
 
 func CustomerUpdateOrder() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("order_id")
@@ -164,7 +164,7 @@ func CustomerUpdateOrder() gin.HandlerFunc {
 
 func CustomerGetFoodsByRestaurantID() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id, ok := c.GetQuery("restaurant_id")
@@ -199,7 +199,7 @@ func CustomerGetFoodsByRestaurantID() gin.HandlerFunc {
 
 func CustomerCreateOrderItem() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		var orderItem models.OrderItem
@@ -233,7 +233,7 @@ func CustomerCreateOrderItem() gin.HandlerFunc {
 
 func CustomerUpdateOrderItem() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("order_item_id")
@@ -277,7 +277,7 @@ func CustomerUpdateOrderItem() gin.HandlerFunc {
 
 func CustomerDeleteOrderItem() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("order_item_id")

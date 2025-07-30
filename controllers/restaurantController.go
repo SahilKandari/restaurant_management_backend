@@ -12,7 +12,7 @@ import (
 
 func GetRestaurants() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		var restaurants []models.Restaurant
@@ -39,7 +39,7 @@ func GetRestaurants() gin.HandlerFunc {
 
 func GetRestaurant() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("restaurant_id")
@@ -64,7 +64,7 @@ func GetRestaurant() gin.HandlerFunc {
 
 func CreateRestaurant() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		var restaurant models.Restaurant
@@ -91,7 +91,7 @@ func CreateRestaurant() gin.HandlerFunc {
 
 func UpdateRestaurant() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("restaurant_id")
@@ -123,7 +123,7 @@ func UpdateRestaurant() gin.HandlerFunc {
 
 func DeleteRestaurant() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("restaurant_id")
@@ -150,7 +150,7 @@ func DeleteRestaurant() gin.HandlerFunc {
 
 func GetRestaurantsByOwner() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		ownerID := c.Param("owner_id")

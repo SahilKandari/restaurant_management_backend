@@ -43,10 +43,11 @@ func main() {
 
 	// Get allowed origins from environment variable
 	allowedOrigins := os.Getenv("CORS_ALLOWED_ORIGINS")
+	fmt.Printf("Allowed Origins: %s\n", allowedOrigins)
+
 	if allowedOrigins == "" {
 		allowedOrigins = "http://localhost:3000" // Default for development
 	}
-
 	// Set up CORS middleware
 	router.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{allowedOrigins},

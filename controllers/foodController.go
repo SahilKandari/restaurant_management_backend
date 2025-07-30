@@ -15,7 +15,7 @@ var validate = validator.New()
 
 func GetFoods() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id, ok := c.GetQuery("restaurant_id")
@@ -67,7 +67,7 @@ func GetFood() gin.HandlerFunc {
 
 func CreateFood() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		var food models.Food
@@ -111,7 +111,7 @@ func CreateFood() gin.HandlerFunc {
 
 func UpdateFood() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("food_id")
@@ -162,7 +162,7 @@ func UpdateFood() gin.HandlerFunc {
 
 func DeleteFood() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("food_id")

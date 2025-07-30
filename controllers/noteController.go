@@ -12,7 +12,7 @@ import (
 
 func GetNotes() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("restaurant_id")
@@ -47,7 +47,7 @@ func GetNote() gin.HandlerFunc {
 
 func CreateNote() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		var note models.Note
@@ -84,7 +84,7 @@ func CreateNote() gin.HandlerFunc {
 
 func UpdateNote() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("note_id")
@@ -127,7 +127,7 @@ func UpdateNote() gin.HandlerFunc {
 
 func DeleteNote() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("note_id")

@@ -11,7 +11,7 @@ import (
 
 func GetOrderItems() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		var orderItems []models.OrderItem
@@ -37,7 +37,7 @@ func GetOrderItems() gin.HandlerFunc {
 
 func GetOrderItem() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("order_item_id")
@@ -58,7 +58,7 @@ func GetOrderItem() gin.HandlerFunc {
 
 func CreateOrderItem() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		var orderItem models.OrderItem
@@ -92,7 +92,7 @@ func CreateOrderItem() gin.HandlerFunc {
 
 func UpdateOrderItem() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("order_item_id")
@@ -136,7 +136,7 @@ func UpdateOrderItem() gin.HandlerFunc {
 
 func DeleteOrderItem() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("order_item_id")
@@ -167,7 +167,7 @@ func DeleteOrderItem() gin.HandlerFunc {
 
 func GetOrderItemsByOrder() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("order_id")

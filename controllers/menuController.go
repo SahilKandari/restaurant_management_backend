@@ -11,7 +11,7 @@ import (
 
 func GetMenus() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		rows, err := Db.QueryContext(ctx, "SELECT * FROM menus")
@@ -38,7 +38,7 @@ func GetMenus() gin.HandlerFunc {
 
 func GetMenu() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("menu_id")
@@ -60,7 +60,7 @@ func GetMenu() gin.HandlerFunc {
 
 func CreateMenu() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		var menu models.Menu
@@ -81,7 +81,7 @@ func CreateMenu() gin.HandlerFunc {
 
 func UpdateMenu() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("menu_id")
@@ -119,7 +119,7 @@ func UpdateMenu() gin.HandlerFunc {
 
 func DeleteMenu() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("menu_id")

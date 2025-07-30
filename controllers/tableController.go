@@ -12,7 +12,7 @@ import (
 
 func GetTables() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		rows, err := Db.QueryContext(ctx, "SELECT * FROM tables")
@@ -39,7 +39,7 @@ func GetTables() gin.HandlerFunc {
 
 func GetTable() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("table_id")
@@ -62,7 +62,7 @@ func GetTable() gin.HandlerFunc {
 
 func GetTablesByRestaurantId() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Query("restaurant_id")
@@ -95,7 +95,7 @@ func GetTablesByRestaurantId() gin.HandlerFunc {
 
 func CreateTable() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		var table models.Table
@@ -131,7 +131,7 @@ func CreateTable() gin.HandlerFunc {
 
 func UpdateTable() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("table_id")
@@ -172,7 +172,7 @@ func UpdateTable() gin.HandlerFunc {
 
 func DeleteTable() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("table_id")

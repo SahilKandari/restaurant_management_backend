@@ -14,7 +14,7 @@ import (
 
 func GetInvoices() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		id := c.Param("restaurant_id")
@@ -79,7 +79,7 @@ func GetInvoiceByOrderID() gin.HandlerFunc {
 }
 
 func CreateInvoiceFromOrder(order models.Order) error {
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
 	const (
@@ -136,7 +136,7 @@ func CreateInvoiceFromOrder(order models.Order) error {
 
 func DownloadInvoice() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 		defer cancel()
 
 		invoiceID := c.Param("invoice_id")
