@@ -77,6 +77,12 @@ func SignUp() gin.HandlerFunc {
 			return
 		}
 
+		// Validate the user struct
+		if err := utils.ValidateStruct(user); err != nil {
+			c.IndentedJSON(http.StatusBadRequest, gin.H{"error": "Validation failed", "details": err.Error()})
+			return
+		}
+
 		// Check if username, email or phone already exists
 		rows, err := Db.QueryContext(ctx, "SELECT * FROM users WHERE username = $1 OR email = $2 OR phone = $3", user.Username, user.Email, user.Phone)
 		if err != nil {
